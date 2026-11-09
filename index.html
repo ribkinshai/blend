@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BLEND — your mind | שייקים, מאצ׳ה, באבל טי וקפה קר בטירת הכרמל</title>
+<meta name="description" content="BLEND — שייקים טריים, מאצ׳ה קרה, באבל טי, יוגורט הבית וקפה קר. הדולפין 4, טירת הכרמל. משלוח 20–40 דק׳ או איסוף עצמי.">
+<meta name="theme-color" content="#F0B8C0">
+<meta property="og:title" content="BLEND — your mind">
+<meta property="og:description" content="שייקים, מאצ׳ה, באבל טי, יוגורט הבית וקפה קר — טירת הכרמל">
+<meta property="og:image" content="assets/menu/03.jpg">
+<link rel="icon" href="assets/brand/tornado-plum.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/SKFMuffins-Black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/SKFMuffins-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'SKF Muffins';src:url(fonts/SKFMuffins-Light.woff2) format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:'SKF Muffins';src:url(fonts/SKFMuffins-Regular.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'SKF Muffins';src:url(fonts/SKFMuffins-Bold.woff2) format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'SKF Muffins';src:url(fonts/SKFMuffins-Black.woff2) format('woff2');font-weight:900;font-display:swap}
+body{margin:0;background:#FFF7F4}
+a{color:#3E1B2D}a:hover{color:#39501F}
+::selection{background:#B0D08A;color:#3E1B2D}
+*{-webkit-tap-highlight-color:transparent}
+
+.twirl{animation:twirl 3.2s linear infinite;transform-style:preserve-3d}
+@keyframes twirl{0%{transform:rotateY(0)}100%{transform:rotateY(360deg)}}
+.wobble{animation:wobble 4s ease-in-out infinite;transform-origin:50% 100%}
+@keyframes wobble{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+
+.colUp{animation:up 38s linear infinite}
+.colDown{animation:down 38s linear infinite}
+@keyframes up{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+@keyframes down{from{transform:translateY(-50%)}to{transform:translateY(0)}}
+.heroCols:hover .colUp,.heroCols:hover .colDown{animation-play-state:paused}
+
+.mq{display:flex;width:max-content;animation:mq 32s linear infinite}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(50%)}}
+
+.card{transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 40px -18px rgba(62,27,45,.45)}
+.card img{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.card:hover img{transform:scale(1.07)}
+
+.tile{transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.tile:hover{transform:rotate(-2deg) scale(1.03)}
+.tile img{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.tile:hover img{transform:scale(1.12) rotate(3deg)}
+
+.chip{transition:background-color .2s ease,color .2s ease,transform .15s ease}
+.chip:hover{transform:translateY(-2px)}
+.btn{transition:transform .2s ease, box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(62,27,45,.6)}
+.chip:focus-visible,.btn:focus-visible,a:focus-visible{outline:3px solid #39501F;outline-offset:3px}
+
+.noScroll::-webkit-scrollbar{display:none}
+.noScroll{scrollbar-width:none}
+
+.pick{animation:pop .55s cubic-bezier(.2,.9,.3,1.3)}
+@keyframes pop{from{transform:scale(.92) rotate(-3deg);opacity:.4}to{transform:none;opacity:1}}
+
+.floatBar{animation:floatIn .7s .6s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes floatIn{from{transform:translateY(140%)}to{transform:none}}
+.dot{animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(176,208,138,.8)}70%{box-shadow:0 0 0 10px rgba(176,208,138,0)}}
+
+@supports (animation-timeline: view()){
+.reveal{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% cover 25%}
+@keyframes reveal{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:none}}
+}
+
+@media (max-width: 760px){
+.heroCols{height:420px !important}
+.colB{display:none !important}
+.navLinks{display:none !important}
+.menuGrid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:12px !important}
+.menuGrid h3{font-size:19px !important}
+.floatBar{left:12px !important;right:12px !important;width:auto !important;margin-left:0 !important;bottom:12px !important}
+.floatText{font-size:17px !important}
+}
+@media (prefers-reduced-motion: reduce){.twirl,.wobble,.colUp,.colDown,.mq,.reveal,.floatBar,.dot{animation:none}}
+</style>
+</head>
+<body>
+<div dir="rtl" style="font-family: 'SKF Muffins', sans-serif; color: #3E1B2D; background: #FFF7F4; overflow-x: clip">
+
+<!-- ================= Header (sticky) ================= -->
+<header style="position: sticky; top: 0; z-index: 30; background: rgba(255,247,244,0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(62,27,45,0.08)">
+<div style="max-width: 1320px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" aria-label="BLEND — לראש העמוד" style="display: flex; align-items: center"><img src="assets/brand/logo-white.svg" alt="BLEND your mind" style="height: 58px; width: auto; display: block"></a>
+<nav class="navLinks" aria-label="ניווט ראשי" style="display: flex; gap: 30px; font-weight: 700; font-size: 20px">
+<a href="#best" style="text-decoration: none">הכי אהובים</a>
+<a href="#menu" style="text-decoration: none">תפריט</a>
+<a href="#mood" style="text-decoration: none">מה הבלנד שלך?</a>
+<a href="#visit" style="text-decoration: none">מצאו אותנו</a>
+</nav>
+<a class="btn" href="https://iron-order-web.onrender.com/r/blend-c0f9" style="background: #3E1B2D; color: #F0B8C0; text-decoration: none; font-weight: 700; font-size: 19px; padding: 11px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px">הזמנה אונליין</a>
+</div>
+</header>
+
+<!-- ================= Hero ================= -->
+<section id="top" style="background: #F0B8C0; position: relative; overflow: hidden">
+<img aria-hidden="true" src="assets/brand/tornado-plum.svg" alt="" style="position: absolute; width: 520px; height: auto; top: -60px; right: -150px; opacity: 0.07">
+<div style="max-width: 1320px; margin: 0 auto; padding: 40px 24px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 40px; position: relative">
+<div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 22px; padding: 40px 0 60px">
+<div style="display: flex; align-items: center; gap: 12px">
+<div style="perspective: 400px"><img class="twirl" src="assets/brand/tornado-plum.svg" alt="" aria-hidden="true" style="width: 54px; height: auto; display: block"></div>
+<span style="font-family: 'SKF Muffins', sans-serif; font-size: 34px; font-weight: 900; color: #39501F; letter-spacing: 0.02em" dir="ltr">Blend your mind</span>
+</div>
+<h1 style="margin: 0; font-family: 'SKF Muffins', sans-serif; font-weight: 900; font-size: clamp(76px, 9vw, 140px); line-height: 0.86; color: #3E1B2D">תערבבו לכם<br><span style="color: #39501F">את היום.</span></h1>
+<p style="margin: 0; font-size: 25px; line-height: 1.65; max-width: 520px; color: #4E2A3C">שייקים טריים, מאצ׳ה קרה, באבל טי, יוגורט הבית וקפה קר — מטירת הכרמל, ישר אליכם. משלוח תוך 20–40 דקות או איסוף עצמי.</p>
+<div style="display: flex; gap: 12px; flex-wrap: wrap">
+<a class="btn" href="https://iron-order-web.onrender.com/r/blend-c0f9" style="background: #3E1B2D; color: #F0B8C0; text-decoration: none; font-weight: 800; font-size: 22px; padding: 16px 30px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px">
+להזמנה אונליין
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
+</a>
+<a class="btn" href="#menu" style="background: transparent; color: #3E1B2D; text-decoration: none; font-weight: 700; font-size: 22px; padding: 16px 28px; border-radius: 999px; border: 2px solid #3E1B2D; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center">לתפריט המלא</a>
+</div>
+<div style="display: flex; gap: 28px; flex-wrap: wrap; margin-top: 10px">
+<div style="display: flex; flex-direction: column"><span style="font-family: 'SKF Muffins', sans-serif; font-weight: 900; font-size: 52px; line-height: 0.9">54</span><span style="font-size: 18px; font-weight: 700; color: #4E2A3C">משקאות ומנות</span></div>
+<div style="display: flex; flex-direction: column"><span style="font-family: 'SKF Muffins', sans-serif; font-weight: 900; font-size: 52px; line-height: 0.9">10</span><span style="font-size: 18px; font-weight: 700; color: #4E2A3C">קטגוריות</span></div>
+<div style="display: flex; flex-direction: column"><span style="font-family: 'SKF Muffins', sans-serif; font-weight: 900; font-size: 52px; line-height: 0.9" dir="ltr">20–40′</span><span style="font-size: 18px; font-weight: 700; color: #4E2A3C">משלוח עד הבית</span></div>
+</div>
+</div>
+
+<!-- live photo columns -->
+<div class="heroCols" aria-hidden="true" style="flex: 1 1 460px; min-width: 0; height: 640px; overflow: hidden; display: flex; gap: 18px; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent)">
+<div style="flex: 1 1 0; min-width: 0">
+<div class="colUp" style="display: flex; flex-direction: column; gap: 18px">
+<div data-list="colA" style="display:contents"></div>
+</div>
+</div>
+<div class="colB" style="flex: 1 1 0; min-width: 0">
+<div class="colDown" style="display: flex; flex-direction: column; gap: 18px">
+<div data-list="colB" style="display:contents"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ================= Marquee ================= -->
+<div aria-hidden="true" dir="ltr" style="background: #3E1B2D; padding: 18px 0; overflow: hidden">
+<div class="mq" style="align-items: center; font-family: 'SKF Muffins', sans-serif; font-weight: 900; font-size: 44px; line-height: 1; white-space: nowrap; color: #B0D08A">
+<span style="padding: 0 22px">BLEND YOUR MIND</span><img src="assets/brand/tornado-pink.svg" alt="" style="height: 40px; width: auto">
+<span style="padding: 0 22px; color: #F0B8C0">שייקים</span><img src="assets/brand/tornado-lightgreen.svg" alt="" style="height: 40px; width: auto">
+<span style="padding: 0 22px">COLD MATCHA</span><img src="assets/brand/tornado-pink.svg" alt="" style="height: 40px; width: auto">
+<span style="padding: 0 22px; color: #F0B8C0">באבל טי</span><img src="assets/brand/tornado-lightgreen.svg" alt="" style="height: 40px; width: auto">
+<span style="padding: 0 22px">ICE CAFÉ</span><img src="assets/brand/tornado-pink.svg" alt="" style="height: 40px; width: auto">
+<span style="padding: 0 22px; color: #F0B8C0">יוגורט הבית</span><img src="assets/brand/tornado-lightgreen.svg" alt="" style="height: 40px; width: auto">
+<span style="padding: 0 22px">BLEND YOUR MIND</span><img src="assets/brand/tornado-pink.svg" alt="" style="height: 40px; width: auto">
+<span style="padding: 0 22px; color: #F0B8C0">שייקים</span><img src="assets/brand/tornado-lightgreen.svg" alt="" style="height: 40px; width: auto">
+<span style="padding: 0 22px">COLD MATCHA</span><img src="assets/brand/tornado-pink.svg" alt="" style="height: 40px; width: auto">
+<span style="padding: 0 22px; color: #F0B8C0">באבל טי</span><img src="assets/brand/tornado-lightgreen.svg" alt="" style="height: 40px; width: auto">
+<span style="padding: 0 22px">ICE CAFÉ</span><img src="assets/brand/tornado-pink.svg" alt="" style="height: 40px; width: auto">
+<span style="padding: 0 22px; color: #F0B8C0">יוגורט הבית</span><img src="assets/brand/tornado-lightgreen.svg" alt="" style="height: 40px; width: auto">
+</div>
+</div>
+
+<!-- ================= Bestsellers ================= -->
+<section id="best" style="max-width: 1320px; margin: 0 auto; padding: 90px 24px 40px">
+<div class="reveal" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 28px">
+<h2 style="margin: 0; font-family: 'SKF Muffins', sans-serif; font-weight: 900; font-size: clamp(56px, 6vw, 92px); line-height: 0.9">הכי אהובים <span style="color: #39501F">עכשיו</span></h2>
+<span style="font-size: 20px; color: #6B4A5A">גללו הצידה ←</span>
+</div>
+<div class="noScroll" style="display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px 2px 30px">
+<div data-list="best" style="display:contents"></div>
+</div>
+</section>
+
+<!-- ================= Menu ================= -->
+<section id="menu" style="max-width: 1320px; margin: 0 auto; padding: 50px 24px 110px">
+<div class="reveal" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 26px">
+<span style="font-family: 'SKF Muffins', sans-serif; font-size: 28px; color: #39501F" dir="ltr">Choose your blend</span>
+<h2 style="margin: 0; font-family: 'SKF Muffins', sans-serif; font-weight: 900; font-size: clamp(64px, 7vw, 110px); line-height: 0.85">התפריט</h2>
+</div>
+<div class="noScroll" role="tablist" aria-label="קטגוריות" style="position: sticky; top: 79px; z-index: 10; background: #FFF7F4; display: flex; gap: 8px; overflow-x: auto; padding: 12px 0 16px; margin-bottom: 18px">
+<div data-list="cats" style="display:contents"></div>
+</div>
+
+<div class="menuGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px">
+<div data-list="items" style="display:contents"></div>
+</div>
+</section>
+
+<!-- ================= Mood picker ================= -->
+<section id="mood" style="background: #B0D08A; position: relative; overflow: hidden">
+<img aria-hidden="true" src="assets/brand/tornado-darkgreen.svg" alt="" class="wobble" style="position: absolute; width: 360px; height: auto; bottom: -40px; left: -60px; opacity: 0.12">
+<div style="max-width: 1320px; margin: 0 auto; padding: 100px 24px; display: flex; flex-wrap: wrap; gap: 50px; align-items: center; position: relative">
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<span style="font-family: 'SKF Muffins', sans-serif; font-size: 30px; color: #39501F" dir="ltr">What's your blend?</span>
+<h2 style="margin: 0; font-family: 'SKF Muffins', sans-serif; font-weight: 900; font-size: clamp(60px, 6.5vw, 104px); line-height: 0.85; color: #3E1B2D">איך אתם<br>מרגישים היום?</h2>
+<p style="margin: 0; font-size: 24px; line-height: 1.6; color: #2C3D18; max-width: 460px">בחרו מצב רוח — ואנחנו נמצא לכם את הבלנד המושלם מהתפריט.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<div data-list="moods" style="display:contents"></div>
+<button class="chip" type="button" id="surpriseBtn" style="font-family: 'SKF Muffins', sans-serif; font-size: 21px; font-weight: 700; padding: 12px 22px; min-height: 50px; border-radius: 999px; border: 2px dashed #39501F; background: #FFF7F4; color: #39501F; cursor: pointer; display: inline-flex; align-items: center; gap: 8px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"></path></svg>
+תפתיעו אותי
+</button>
+</div>
+</div>
+
+<div style="flex: 1 1 380px; min-width: 0; display: flex; justify-content: center">
+<div data-list="picked" style="display:contents"></div>
+</div>
+</div>
+</section>
+
+<!-- ================= Logo wall ================= -->
+<section style="max-width: 1320px; margin: 0 auto; padding: 100px 24px 90px">
+<div class="reveal" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 30px">
+<h2 style="margin: 0; font-family: 'SKF Muffins', sans-serif; font-weight: 900; font-size: clamp(56px, 6vw, 92px); line-height: 0.9">בלנד <span style="color: #39501F">בכל מצב רוח</span></h2>
+<p style="margin: 0; max-width: 380px; font-size: 21px; line-height: 1.6; color: #6B4A5A">ורוד עתיק, סגול וירוק — הצבעים של הכוסות שלנו, של הבר ושל מצב הרוח.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px">
+<div class="tile reveal" style="background: #3E1B2D; border-radius: 30px; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; overflow: hidden"><img src="assets/brand/logo-plum.svg" alt="BLEND" style="width: 58%; height: auto"><span style="font-size: 17px; font-weight: 700; letter-spacing: .08em; color: #F0B8C0">CHILL</span></div>
+<div class="tile reveal" style="background: #B0D08A; border-radius: 30px; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; overflow: hidden"><img src="assets/brand/logo-lightgreen.svg" alt="BLEND" style="width: 58%; height: auto"><span style="font-size: 17px; font-weight: 700; letter-spacing: .08em; color: #39501F">FRESH</span></div>
+<div class="tile reveal" style="background: #39501F; border-radius: 30px; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; overflow: hidden"><img src="assets/brand/logo-darkgreen.svg" alt="BLEND" style="width: 58%; height: auto"><span style="font-size: 17px; font-weight: 700; letter-spacing: .08em; color: #F0B8C0">GREEN POWER</span></div>
+<div class="tile reveal" style="background: #F0B8C0; border-radius: 30px; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; overflow: hidden"><img src="assets/brand/logo-pink.svg" alt="BLEND" style="width: 58%; height: auto"><span style="font-size: 17px; font-weight: 700; letter-spacing: .08em; color: #3E1B2D">SWEET</span></div>
+</div>
+</section>
+
+<!-- ================= Visit ================= -->
+<section id="visit" style="background: #3E1B2D; color: #FFF7F4; position: relative; overflow: hidden">
+<div aria-hidden="true" style="position: absolute; top: 40px; left: 6%; perspective: 600px"><img class="twirl" src="assets/brand/tornado-pink.svg" alt="" style="width: 200px; height: auto; opacity: .18; display: block"></div>
+<div style="max-width: 1320px; margin: 0 auto; padding: 100px 24px 140px; position: relative">
+<h2 class="reveal" style="margin: 0 0 40px; font-family: 'SKF Muffins', sans-serif; font-weight: 900; font-size: clamp(64px, 7vw, 116px); line-height: 0.85; color: #F0B8C0">בואו <span style="color: #B0D08A">לבלנד.</span></h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+<div class="reveal" style="border: 1px solid rgba(240,184,192,.3); border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 18px; font-weight: 700; color: #B0D08A">כתובת</span>
+<span style="font-size: 26px; font-weight: 800">הדולפין 4, טירת הכרמל</span>
+<a href="https://waze.com/ul?q=%D7%94%D7%93%D7%95%D7%9C%D7%A4%D7%99%D7%9F%204%20%D7%98%D7%99%D7%A8%D7%AA%20%D7%94%D7%9B%D7%A8%D7%9E%D7%9C&amp;navigate=yes" style="color: #F0B8C0; font-weight: 700; font-size: 20px">ניווט בוויז ←</a>
+</div>
+<div class="reveal" style="border: 1px solid rgba(240,184,192,.3); border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 18px; font-weight: 700; color: #B0D08A">טלפון</span>
+<a href="tel:049887272" style="font-size: 26px; font-weight: 800; color: #FFF7F4; text-decoration: none" dir="ltr">04-988-7272</a>
+<span style="font-size: 20px; color: #E9D6DC">משלוח 20–40 דק׳ · איסוף עצמי</span>
+</div>
+<div class="reveal" style="border: 1px solid rgba(240,184,192,.3); border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 18px; font-weight: 700; color: #B0D08A">שעות פתיחה</span>
+<span style="font-size: 25px; font-weight: 700; white-space: pre-line; line-height: 1.5">א׳–ה׳ [שעות]
+ו׳ [שעות] · שבת [שעות]</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ================= Footer ================= -->
+<footer style="background: #39501F; color: #FFF7F4; padding: 50px 24px 120px">
+<div style="max-width: 1320px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 28px">
+<img src="assets/brand/logo-darkgreen.svg" alt="BLEND your mind" style="height: 120px; width: auto">
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 19px; color: #E3EED5">
+<span>BLEND · הדולפין 4, טירת הכרמל · <span dir="ltr">04-988-7272</span></span>
+<div style="display: flex; gap: 18px; flex-wrap: wrap">
+<a href="https://iron-order-web.onrender.com/r/blend-c0f9" style="color: #B0D08A">הזמנה אונליין</a>
+<a href="#menu" style="color: #B0D08A">תפריט</a>
+<a href="#visit" style="color: #B0D08A">[אינסטגרם]</a>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- ================= Floating quick-order bar ================= -->
+<div class="floatBar" style="position: fixed; bottom: 22px; left: 50%; margin-left: -260px; width: 520px; max-width: calc(100% - 24px); box-sizing: border-box; z-index: 50; background: #3E1B2D; color: #FFF7F4; border-radius: 999px; padding: 8px 8px 8px 8px; display: flex; align-items: center; justify-content: space-between; gap: 10px; box-shadow: 0 18px 40px -12px rgba(62,27,45,.6)">
+<div style="display: flex; align-items: center; gap: 12px; padding-right: 10px; min-width: 0">
+<div style="perspective: 300px; flex: 0 0 auto"><img class="twirl" src="assets/brand/tornado-pink.svg" alt="" aria-hidden="true" style="width: 30px; height: auto; display: block"></div>
+<div style="display: flex; flex-direction: column; min-width: 0">
+<span class="floatText" style="font-weight: 800; font-size: 20px; white-space: nowrap">הזמנה מהירה</span>
+<span style="font-size: 17px; color: #E9D6DC; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px"><span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #B0D08A"></span>משלוח 20–40 דק׳ · איסוף עצמי</span>
+</div>
+</div>
+<a class="btn" href="https://iron-order-web.onrender.com/r/blend-c0f9" style="flex: 0 0 auto; background: #B0D08A; color: #3E1B2D; text-decoration: none; font-weight: 800; font-size: 20px; padding: 12px 22px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px">
+להזמנה
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
+</a>
+</div>
+
+</div>
+<script>
+var ITEMS = [{"c": 0, "en": "Green Zen", "he": "גרין זן", "v": [26, 32], "d": "מאצ'ה יפנית איכותית, בננה, קוקוס ויוגורט במרקם קטיפתי.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/ophtctrfwrqivtqmflsm", "local": "assets/menu/00.jpg"}, {"c": 0, "en": "Green Power", "he": "גרין פאוור", "v": [26, 32], "d": "אננס ובננה מתמזגים עם תמר מתוק, חלב שקדים וספירולינה ליצירת שייק טרופי, עשיר ומרענן עם עומק טבעי בכל לגימה.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/q3pouzrgwav1sbmfnq36", "local": "assets/menu/01.jpg"}, {"c": 0, "en": "Green Boost", "he": "גרין בוסט", "v": [26, 32], "d": "קיווי, אננס ועלי תרד יוצרים שילוב מרענן ומלא חיים, עם מי קוקוס, סורבה קוקוס ונגיעה של אגבה שמעניקים מתיקות טבעית ומרקם קליל במיוחד.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/zillv9dxmbpqxsizx2gr", "local": "assets/menu/02.jpg"}, {"c": 1, "en": "Straw & Banana", "he": "תות בננה", "v": [26, 32], "d": "תות בננה יוגורט וסורבה תות יוצרים שייק קרמי, מרענן ומלא בטעם נוסטלגי שאי אפשר להפסיק לשתות.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/uammboihn78bg2iph67r", "local": "assets/menu/03.jpg"}, {"c": 1, "en": "Berry Breeze", "he": "ברי בריז", "v": [26, 32], "d": "אוכמניות, אננס ובננה בשילוב מי קוקוס ויוגורט לשייק עשיר בטעמים טבעיים, עם איזון מושלם בין מתיקות לרעננות.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/oj9gaui5r0dbjomzhdcz", "local": "assets/menu/04.jpg"}, {"c": 1, "en": "Tropical Party", "he": "טרופיקל פארטי", "v": [26, 32], "d": "מנגו, אננס ותות בשילוב מיצי תפוזים ותפוחים טבעיים, סורבה קוקוס ויוגורט ליצירת שילוב צבעוני, עסיסי ומרענן.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/yseitxenkfigv5uhgpsk", "local": "assets/menu/05.jpg"}, {"c": 1, "en": "Mangaya", "he": "מנגאיה", "v": [26, 32], "d": "מנגו, אננס ובננה בשילוב מי קוקוס ומיץ תפוחים לשייק קליל, ומלא בטעם טבעי, נגיעה של אגבה לאיזון המתיקות.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/a9dc0xgt8pj1ca4qqrri", "local": "assets/menu/06.jpg"}, {"c": 1, "en": "Mango Coco", "he": "מנגו קוקו", "v": [26, 32], "d": "מנגו וקרם קוקוס יוצרים מרקם עשיר במיוחד, עם יוגורט שמוסיף קרמיות עדינה ומושלמת.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/zvnwlb2ao638njf5pdkz", "local": "assets/menu/07.jpg"}, {"c": 1, "en": "Melomint", "he": "מלומינט", "v": [26, 32], "d": "מלון, אננס, פסיפלורה ונענע יוצרים שילוב פירותי ומרענן.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/hcn1tkaggvpgwc7sbztd", "local": "assets/menu/08.jpg"}, {"c": 1, "en": "Sunset Berry", "he": "סאנסט ברי", "v": [26, 32], "d": "תותים ואוכמניות בשילוב מי קוקוס, מיץ תפוחים, סורבה קוקוס ויוגורט ליצירת שייק רענן, עדין ומלא בטעמי פירות יער.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/aojcocbdjurlycyfmcot", "local": "assets/menu/09.jpg"}, {"c": 1, "en": "Pink Dragon", "he": "פינק דרגון", "v": [26, 32], "d": "פיטאיה, מנגו, תות ותפוזים בשילוב סורבה קוקוס ויוגורט לשייק טרופי, קטיפתי ומרענן.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/t8a8mx7ao5slhyraep2x", "local": "assets/menu/10.jpg"}, {"c": 1, "en": "Pina Colada", "he": "פינה קולדה", "v": [26, 32], "d": "אננס, בננה, קרם קוקוס ומי קוקוס יוצרים משקה עשיר, חלק ומרענן עם טעם אקזוטי.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/qtgkmfv2mamo3juftiny", "local": "assets/menu/11.jpg"}, {"c": 1, "en": "Acai Smooth", "he": "אסאי סמוט", "v": [27, 33], "d": "אסאי עם אוכמניות, בננה ומיץ תפוחים ליצירת שייק חלק, פירותי ומלא עומק. יוגורט ונגיעה של דבש מאזנים את הטעמים ומעניקים מרקם קטיפתי.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/c98g8g5shxfslshmebbb", "local": "assets/menu/12.jpg"}, {"c": 2, "en": "Acai Bowl", "he": "אסאי בול", "v": [40], "d": "קערת אסאי קרמית, מרעננת ומפנקת, בתוספת בננה טרייה, תפוח ירוק, גרנולה קראנצ'ית וזרעי צ'יה.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/jjvwmsrxi2h6vgdh0bhv", "local": "assets/menu/13.jpg"}, {"c": 3, "en": "Creamy Butter", "he": "קרימי חמאת בוטנים", "v": [27, 33], "d": "חמאת בוטנים, תמר ופקאן מסוכר משתלבים עם שיבולת שועל ליצירת משקה סמיך, מפנק ומשביע עם מתיקות טבעית.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/ptsvgcyp0tkjmdrptozd", "local": "assets/menu/14.jpg"}, {"c": 3, "en": "Halva Creamy", "he": "קרימי חלווה", "v": [27, 33], "d": "טחינה, סילאן, בננה ותמר נפגשים עם יוגורט וחלב לשייק חלק, עשיר ומאוזן שמעניק חוויית טעם ייחודית.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/jp9jgev1eu4wgd9cqiy9", "local": "assets/menu/15.jpg"}, {"c": 3, "en": "Creamy Bueno", "he": "קרימי בואנו", "v": [27, 33], "d": "בננה, ממרח אגוזי לוז איכותי, חלב ושוקולד יוצרים שייק סמיך, קטיפתי ועשיר שמרגיש כמו קינוח מושלם.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/kk27unfxaywmzydwtxim", "local": "assets/menu/16.jpg"}, {"c": 3, "en": "Royal Pistachio", "he": "רויאל פיסטוק", "v": [27, 33], "d": "קרם פיסטוק וחלב שקדים יוצרים משקה עשיר וקטיפתי, עם אגוזי מלך, קשיו ופקאן שמוסיפים עומק וטעם בכל לגימה.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/rdpzfxwkkfxcrg1w201w", "local": "assets/menu/17.jpg"}, {"c": 4, "en": "Cold Matcha Vanilla", "he": "מאצ׳ה וניל", "v": [28], "d": "מאצ'ה, סירופ וניל, חלב וקצפת.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/f2dpnzuggphwytfhcd4r", "local": "assets/menu/18.jpg"}, {"c": 4, "en": "Cold Matcha Mango", "he": "מאצ׳ה מנגו", "v": [28], "d": "מאצ'ה, מחית מנגו, חלב וקצפת.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/homwhbhkrhhekcfk4ep7", "local": "assets/menu/19.jpg"}, {"c": 4, "en": "Cold Matcha Strawberry", "he": "מאצ׳ה תות", "v": [28], "d": "מאצ'ה, מחית תות, חלב וקצפת.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/v4ae0lnvvgrrspwmp6ni", "local": "assets/menu/20.jpg"}, {"c": 4, "en": "Cold Matcha Latte", "he": "מאצ׳ה לאטה", "v": [28], "d": "מאצ'ה, חלב, סירופ סוכר וקצפת.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/zaut8me2a8dllaiy582q", "local": "assets/menu/21.jpg"}, {"c": 5, "en": "Ice Café Classic", "he": "קפה קר קלאסי", "v": [18], "d": "אספרסו עשיר, קרח מרענן וטעם קפה נקי שמדבר בעד עצמו.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/wcdghxjaxm2fqmapbhni", "local": "assets/menu/22.jpg"}, {"c": 5, "en": "Ice Café Hazelnut", "he": "קפה קר אגוזי לוז", "v": [18], "d": "קפה קר עם סירופ של אגוזי לוז קלויים, לאיזון מושלם בין ארומת הקפה למתיקות האגוזית.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/p8pponkexfjvvwudvha3", "local": "assets/menu/23.jpg"}, {"c": 5, "en": "Ice Café Montblanc", "he": "קפה קר מון בלאן", "v": [18], "d": "אמריקנו קר ועשיר עם שכבת קולד פואם קטיפתית וסירופ קרמל.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/k6ooio4zbsw1qi6q1zp0", "local": "assets/menu/24.jpg"}, {"c": 5, "en": "Ice Café Gingerbread", "he": "קפה קר ג׳ינג׳רברד", "v": [18], "d": "קפה קר עשיר עם טעם ג'ינג'רברד קלאסי, בניחוחות תבלינים חמימים ומתיקות מעודנת.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/mbc9icjrrivfmff51cve", "local": "assets/menu/25.jpg"}, {"c": 5, "en": "Ice Café Cinnamon", "he": "קפה קר קינמון", "v": [18], "d": "קפה קר עשיר בניחוחות קינמון עדינים, לחוויית קפה מאוזנת ומלאת ארומה.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/udzfuj9elfx5asl2ts1a", "local": "assets/menu/26.jpg"}, {"c": 5, "en": "Ice Café Lotus", "he": "קפה קר לוטוס", "v": [18], "d": "קפה קר עשיר עם טעמו הקרמלי של עוגיית לוטוס, היוצר שילוב מושלם של מתיקות עדינה וארומת קפה עשירה.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/haxbbvcfajoahhgguris", "local": "assets/menu/27.jpg"}, {"c": 5, "en": "Pumpkin Spice Ice Café", "he": "קפה קר ספייסי דלעת", "v": [18], "d": "קפה קר מפנק עם ניחוחות דלעת, ציפורן וקינמון לחוויית קפה מלאת אופי.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/vvrk8zmutywp65swwodu", "local": "assets/menu/28.jpg"}, {"c": 5, "en": "Ice Café Bumble Bee", "he": "קפה קר באמבל בי", "v": [18], "d": "שילוב ייחודי של אספרסו איכותי ומיץ תפוזים טבעי, המעניק למשקה איזון מושלם בין רעננות, מתיקות וטעמי קפה עמוקים.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/iyljjgrfpsw49i2t0xyd", "local": "assets/menu/29.jpg"}, {"c": 5, "en": "Ice Café Caramel", "he": "קפה קר קרמל", "v": [18], "d": "אספרסו איכותי עם טעם קרמל עדין, ליצירת קפה קר עשיר ומפנק.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/tvbyg2wftoc4mavf1q7s", "local": "assets/menu/30.jpg"}, {"c": 5, "en": "Ice Café Vanilla", "he": "קפה קר וניל", "v": [18], "d": "קפה קר עשיר עם טעם וניל עשיר, המשתלב בצורה מושלמת עם ארומת האספרסו.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/zodzxrzdh9wlaewuogsh", "local": "assets/menu/31.jpg"}, {"c": 5, "en": "Iced Americano", "he": "אמריקנו קר", "v": [16], "d": "אמריקנו קר ונקי, אספרסו איכותי על קרח לחוויית קפה מרעננת.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/npoiwyinloccdd3vr5z3", "local": "assets/menu/32.jpg"}, {"c": 6, "en": "Tiger Bubble", "he": "טייגר באבלס", "v": [32], "d": "תה שחור וחלב עם סירופ סוכר חום עשיר וכדורי טפיוקה, בגרסת הטייגר הקלאסית.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/j455gsvo7yg8n6epwuzg", "local": "assets/menu/33.jpg"}, {"c": 6, "en": "Matcha Bubble", "he": "מאצ׳ה באבלס", "v": [32], "d": "משקה מאצ'ה עם חלב, כדורי טפיוקה שחורים וקצפת הבית של בלנד.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/bazwxwao5mjd5p89dj8t", "local": "assets/menu/34.jpg"}, {"c": 6, "en": "Red Bubble Tea", "he": "רד באבל תה", "v": [28], "d": "תה ירוק עם תות ופטל, מאוזן בנגיעת לימון ומוגש עם כדורי פופינג בטעם תות.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/j0suu7nfkrzcjjbfmehv", "local": "assets/menu/35.jpg"}, {"c": 6, "en": "Peach Pine Bubble", "he": "פיץ׳ פיין באבלס", "v": [28], "d": "תה בטעם אפרסק עם נגיעת וניל ולימון, בשילוב כדורי פופינג בטעם אננס.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/r9seodtgym9ro5mzdsnt", "local": "assets/menu/36.jpg"}, {"c": 6, "en": "Mango Passion Bubble", "he": "מנגו פסיפלורה באבלס", "v": [28], "d": "תה עם מנגו ואננס, מאוזן בנגיעת לימון ומוגש עם כדורי פופינג בטעם מנגו.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/zf0sxzjrtghpqqcpttzv", "local": "assets/menu/37.jpg"}, {"c": 6, "en": "Blu Paradise Bubble", "he": "בבל טי אוכמניות אננס", "v": [28], "d": "תה בשילוב אוכמניות ואננס, עם נגיעת לימון וכדורי פופינג בטעם אוכמניות.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/ltxi0gtaumllfghluoyn", "local": "assets/menu/38.jpg"}, {"c": 7, "en": "Yogurt Dubai", "he": "יוגורט דובאי", "v": [36], "d": "יוגורט הבית עם קרם פיסטוק, שערות קדאיף פריכות, פקאן, שוקולד חלב וסירופ סילאן.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/dgbf6hllgohneybr6cil", "local": "assets/menu/39.jpg"}, {"c": 7, "en": "Yogurt Blueberries", "he": "יוגורט אוכמניות", "v": [36], "d": "יוגורט הבית עם רוטב אוכמניות, אוכמניות טריות, שוקולד לבן וקוקוס.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/kaiyzoprnsuyce21gl4d", "local": "assets/menu/40.jpg"}, {"c": 7, "en": "Yogurt Lotus", "he": "יוגורט לוטוס", "v": [36], "d": "יוגורט הבית עם קרם לוטוס, שברי עוגיות לוטוס ורוטב לוטוס מפנק.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/co6rtag1skl5qd4md0nx", "local": "assets/menu/41.jpg"}, {"c": 7, "en": "Yogurt Royal Mix", "he": "יוגורט רויאל מיקס", "v": [36], "d": "יוגורט הבית עם אגוזי מלך, בוטנים וגרנולה עם זילוף של סירופ קרמל.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/wo5ibbsors5fag5er9qg", "local": "assets/menu/42.jpg"}, {"c": 7, "en": "Yogurt Tapioca", "he": "יוגורט טפיוקה", "v": [36], "d": "יוגורט הבית עם פניני טפיוקה, רוטב קרמל עשיר וקרמי.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/gikevj3uobkt0mdnvn5t", "local": "assets/menu/43.jpg"}, {"c": 8, "en": "Espresso", "he": "אספרסו", "v": [10], "d": "אספרסו איכותי, קצר ועשיר, עם קרמה מושלמת וארומה עמוקה.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/zwmzxcukxsneelykjb71", "local": "assets/menu/44.jpg"}, {"c": 8, "en": "Cappuccino", "he": "קפוצ'ינו", "v": [15], "d": "אספרסו על חלב מוקצף בקטיפתיות, לכוס קפה חמה ומאוזנת.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/jv6w30m5zidblqdgh1bl", "local": "assets/menu/45.jpg"}, {"c": 8, "en": "Americano", "he": "אמריקנו", "v": [12], "d": "אספרסו איכותי במים חמים, לקפה חם ונקי בעל גוף מלא.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/gqkw8am7nnqwcty77de5", "local": "assets/menu/46.jpg"}, {"c": 8, "en": "Macchiato", "he": "מקיאטו", "v": [12], "d": "אספרסו עשיר עם נגיעת חלב מוקצף, לאיזון עדין וטעם עמוק.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/rii34hvy9lm48eweikre", "local": "assets/menu/47.jpg"}, {"c": 8, "en": "Sahlab", "he": "סחלב חם", "v": [20], "d": "משקה חם, סמיך וקרמי על בסיס חלב, בתוספת קינמון, קוקוס, אגוזים קצוצים וסירופ מי ורדים.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/u9v0r7yttihgp0mgy9rb", "local": "assets/menu/48.jpg"}, {"c": 8, "en": "Chai Latte", "he": "צ׳אי לאטה", "v": [18], "d": "", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/zxu3njqa85j6gbrgnxn3", "local": "assets/menu/49.jpg"}, {"c": 8, "en": "Hot Cider", "he": "סיידר חם", "v": [16], "d": "סיידר תפוחים חם ומפנק בניחוח קינמון, מוגש עם מקל קינמון, תפוח מיובש וכוכב אניס.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/luawwmeyhnzztbz0jkoq", "local": "assets/menu/50.jpg"}, {"c": 9, "en": "Fresh Juice", "he": "מיץ טבעי", "v": [16], "d": "", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/arpxgcs8o3epxurxawur", "local": "assets/menu/51.jpg"}, {"c": 9, "en": "LEO Soda", "he": "סודה לאו", "v": [9], "d": "משקה סודה קר ומוגז, מרענן ופשוט.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/yrsqqpe8hydkyozmhthb", "local": "assets/menu/52.jpg"}, {"c": 9, "en": "Mineral Water", "he": "מים מינרלים", "v": [7], "d": "מים מינרלים קרים ומרעננים.", "img": "https://res.cloudinary.com/dkjua9wwo/image/upload/c_fill,ar_1:1,g_auto,w_700,f_auto,q_auto/atlas/2e306258-9ad7-4e0b-903a-8258c10c6674/products/lxnmqhsuehyc7lcrbfov", "local": "assets/menu/53.jpg"}];
+var CATS = [
+  { label: 'ירוק', n: 0 }, { label: 'פירותי', n: 1 }, { label: 'אסאי בול', n: 2 }, { label: 'קרימי', n: 3 },
+  { label: 'מאצ׳ה קרה', n: 4 }, { label: 'קפה קר', n: 5 }, { label: 'באבל טי', n: 6 }, { label: 'יוגורט הבית', n: 7 },
+  { label: 'קפה חם', n: 8 }, { label: 'שתייה קלה', n: 9 }
+];
+var BEST = [3, 33, 35, 20, 34, 27];
+var COLA = [3, 20, 33, 10, 39, 0];
+var COLB = [27, 35, 13, 34, 7, 41];
+var MOODS = [
+  { label: 'צריך אנרגיה', i: 27, kicker: 'לבוסט של אמצע היום' },
+  { label: 'רענן', i: 2, kicker: 'ירוק, קליל ומלא חיים' },
+  { label: 'זן', i: 0, kicker: 'מאצ׳ה רכה לנשום עמוק' },
+  { label: 'טרופי', i: 10, kicker: 'חופשה בכוס' },
+  { label: 'פינוק', i: 16, kicker: 'קינוח שאפשר לשתות' },
+  { label: 'משהו מתוק', i: 39, kicker: 'יוגורט הבית במיטבו' },
+  { label: 'באבלס', i: 33, kicker: 'הקלאסיקה של הבאבל טי' }
+];
+
+function price(it) {
+  if (it.v.length > 1) return 'קטן ₪' + it.v[0] + ' · גדול ₪' + it.v[1];
+  return '₪' + it.v[0];
+}
+function view(i, extra) {
+  var it = ITEMS[i];
+  var o = { he: it.he, en: it.en, d: it.d, img: it.img, local: it.local, price: price(it), from: '₪' + it.v[0] };
+  if (extra) for (var k in extra) o[k] = extra[k];
+  return o;
+}
+const T = {
+  colA: (p) => `<div style="border-radius: 28px; overflow: hidden; background: #FFF7F4; box-shadow: 0 18px 36px -20px rgba(62,27,45,.5)"><img src="${p.img}" data-local="${p.local}" alt="" style="width: 100%; aspect-ratio: 1; object-fit: cover; display: block"><div style="padding: 10px 16px 14px; display: flex; justify-content: space-between; align-items: baseline; gap: 8px"><span style="font-weight: 800; font-size: 20px">${p.he}</span><span style="font-family: 'SKF Muffins', sans-serif; font-size: 27px; font-weight: 900; color: #39501F">${p.from}</span></div></div>`,
+  colB: (p) => `<div style="border-radius: 28px; overflow: hidden; background: #FFF7F4; box-shadow: 0 18px 36px -20px rgba(62,27,45,.5)"><img src="${p.img}" data-local="${p.local}" alt="" style="width: 100%; aspect-ratio: 1; object-fit: cover; display: block"><div style="padding: 10px 16px 14px; display: flex; justify-content: space-between; align-items: baseline; gap: 8px"><span style="font-weight: 800; font-size: 20px">${p.he}</span><span style="font-family: 'SKF Muffins', sans-serif; font-size: 27px; font-weight: 900; color: #39501F">${p.from}</span></div></div>`,
+  best: (b) => `<a class="card" href="https://iron-order-web.onrender.com/r/blend-c0f9" style="flex: 0 0 270px; scroll-snap-align: start; text-decoration: none; color: #3E1B2D; background: #FFFFFF; border-radius: 30px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 1px 0 rgba(62,27,45,.06)">
+<div style="position: relative; overflow: hidden"><img src="${b.img}" data-local="${b.local}" alt="${b.he}" style="width: 100%; aspect-ratio: 1; object-fit: cover; display: block"><span style="position: absolute; top: 12px; right: 14px; font-family: 'SKF Muffins', sans-serif; font-weight: 900; font-size: 46px; line-height: 1; color: #3E1B2D; background: #F0B8C0; border-radius: 16px; padding: 2px 12px 0">${b.rank}</span></div>
+<div style="padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-weight: 800; font-size: 24px">${b.he}</span>
+<span style="font-family: 'SKF Muffins', sans-serif; font-size: 25px; color: #39501F" dir="ltr">${b.en}</span>
+<span style="margin-top: 6px; font-weight: 700; font-size: 20px">${b.price}</span>
+</div>
+</a>`,
+  cats: (c) => `${c.on ? `
+<button class="chip" type="button" role="tab" aria-selected="true" data-act="pick" data-i="${c.idx}" style="flex: 0 0 auto; font-family: 'SKF Muffins', sans-serif; font-size: 20px; font-weight: 700; padding: 10px 20px; min-height: 46px; border-radius: 999px; border: 2px solid #3E1B2D; background: #3E1B2D; color: #F0B8C0; cursor: pointer; white-space: nowrap">${c.label} <span style="opacity: .7; font-weight: 400">${c.count}</span></button>
+` : `
+<button class="chip" type="button" role="tab" aria-selected="false" data-act="pick" data-i="${c.idx}" style="flex: 0 0 auto; font-family: 'SKF Muffins', sans-serif; font-size: 20px; font-weight: 700; padding: 10px 20px; min-height: 46px; border-radius: 999px; border: 2px solid #E8CFD3; background: #FFFFFF; color: #3E1B2D; cursor: pointer; white-space: nowrap">${c.label} <span style="opacity: .55">${c.count}</span></button>
+`}`,
+  items: (it) => `<article class="card" style="background: #FFFFFF; border-radius: 28px; overflow: hidden; display: flex; flex-direction: column">
+<div style="overflow: hidden"><img src="${it.img}" data-local="${it.local}" alt="${it.he}" loading="lazy" style="width: 100%; aspect-ratio: 1; object-fit: cover; display: block"></div>
+<div style="padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 10px">
+<h3 style="margin: 0; font-size: 24px; font-weight: 800; line-height: 1.25">${it.he}</h3>
+<span style="font-family: 'SKF Muffins', sans-serif; font-size: 22px; color: #39501F; white-space: nowrap" dir="ltr">${it.en}</span>
+</div>
+<p style="margin: 0; font-size: 19px; line-height: 1.55; color: #6B4A5A; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden">${it.d}</p>
+<div style="margin-top: auto; padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px">
+<span style="font-weight: 800; font-size: 20px">${it.price}</span>
+<a class="btn" href="https://iron-order-web.onrender.com/r/blend-c0f9" aria-label="להזמין ${it.he}" style="width: 44px; height: 44px; border-radius: 50%; background: #B0D08A; color: #3E1B2D; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; flex: 0 0 auto">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+</a>
+</div>
+</div>
+</article>`,
+  moods: (m) => `${m.on ? `
+<button class="chip" type="button" aria-pressed="true" data-act="pick" data-i="${m.idx}" style="font-family: 'SKF Muffins', sans-serif; font-size: 21px; font-weight: 700; padding: 12px 22px; min-height: 50px; border-radius: 999px; border: 2px solid #3E1B2D; background: #3E1B2D; color: #B0D08A; cursor: pointer">${m.label}</button>
+` : `
+<button class="chip" type="button" aria-pressed="false" data-act="pick" data-i="${m.idx}" style="font-family: 'SKF Muffins', sans-serif; font-size: 21px; font-weight: 700; padding: 12px 22px; min-height: 50px; border-radius: 999px; border: 2px solid #3E1B2D; background: transparent; color: #3E1B2D; cursor: pointer">${m.label}</button>
+`}`,
+  picked: (pk) => `<div class="pick" style="width: 100%; max-width: 420px; background: #FFF7F4; border-radius: 36px; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(62,27,45,.6); transform: rotate(-2deg)">
+<img src="${pk.img}" data-local="${pk.local}" alt="${pk.he}" style="width: 100%; aspect-ratio: 1; object-fit: cover; display: block">
+<div style="padding: 22px 26px 26px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 18px; font-weight: 700; color: #39501F">${pk.kicker}</span>
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap">
+<span style="font-weight: 900; font-size: 26px">${pk.he}</span>
+<span style="font-family: 'SKF Muffins', sans-serif; font-size: 26px; color: #39501F" dir="ltr">${pk.en}</span>
+</div>
+<p style="margin: 0; font-size: 20px; line-height: 1.6; color: #6B4A5A">${pk.d}</p>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 8px; flex-wrap: wrap">
+<span style="font-weight: 800; font-size: 21px">${pk.price}</span>
+<a class="btn" href="https://iron-order-web.onrender.com/r/blend-c0f9" style="background: #3E1B2D; color: #F0B8C0; text-decoration: none; font-weight: 800; font-size: 20px; padding: 12px 24px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center">להזמין את זה</a>
+</div>
+</div>
+</div>`
+};
+
+var state = { cat: 1, mood: 0, surprise: -1 };
+function render(name, arr) {
+  var el = document.querySelector('[data-list="' + name + '"]');
+  if (el) el.innerHTML = arr.map(function (x) { return T[name](x); }).join('');
+}
+function vals() {
+  var st = state;
+  var pickedIdx = st.surprise >= 0 ? st.surprise : MOODS[st.mood].i;
+  var kicker = st.surprise >= 0 ? 'הפתעה מהבר' : MOODS[st.mood].kicker;
+  return {
+    colA: COLA.concat(COLA).map(function (i) { return view(i); }),
+    colB: COLB.concat(COLB).map(function (i) { return view(i); }),
+    best: BEST.map(function (i, n) { return view(i, { rank: '0' + (n + 1) }); }),
+    cats: CATS.map(function (c) {
+      var count = ITEMS.filter(function (x) { return x.c === c.n; }).length;
+      return { label: c.label, count: count, on: c.n === st.cat, idx: c.n };
+    }),
+    items: ITEMS.map(function (x, i) { return i; }).filter(function (i) { return ITEMS[i].c === st.cat; }).map(function (i) { return view(i); }),
+    moods: MOODS.map(function (m, n) { return { label: m.label, on: st.surprise < 0 && n === st.mood, idx: n }; }),
+    picked: [view(pickedIdx, { kicker: kicker })],
+    pickedIdx: pickedIdx
+  };
+}
+function renderAll(only) {
+  var v = vals();
+  (only || ['colA', 'colB', 'best', 'cats', 'items', 'moods', 'picked']).forEach(function (k) { render(k, v[k]); });
+  return v;
+}
+document.addEventListener('click', function (e) {
+  var b = e.target.closest('[data-act]');
+  if (!b) return;
+  var list = b.closest('[data-list]');
+  var name = list && list.getAttribute('data-list');
+  var i = +b.getAttribute('data-i');
+  if (name === 'cats') { state.cat = i; renderAll(['cats', 'items']); }
+  if (name === 'moods') { state.mood = i; state.surprise = -1; renderAll(['moods', 'picked']); }
+});
+document.addEventListener('DOMContentLoaded', function () {
+  renderAll();
+  document.getElementById('surpriseBtn').addEventListener('click', function () {
+    var cur = vals().pickedIdx;
+    var r = Math.floor(Math.random() * 51);
+    if (r === cur) r = (r + 7) % 51;
+    state.surprise = r; renderAll(['moods', 'picked']);
+  });
+});
+// fall back to local photos if the ordering platform's image CDN is unreachable
+document.addEventListener('error', function (e) {
+  var img = e.target;
+  if (img.tagName === 'IMG' && img.dataset.local && img.src.indexOf(img.dataset.local) === -1) img.src = img.dataset.local;
+}, true);
+</script>
+</body>
+</html>
