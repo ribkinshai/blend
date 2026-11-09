@@ -52,6 +52,8 @@ a{color:#3E1B2D}a:hover{color:#39501F}
 
 .chip{transition:background-color .2s ease,color .2s ease,transform .15s ease}
 .chip:hover{transform:translateY(-2px)}
+.soc{transition:transform .2s ease}
+.soc:hover{transform:translateY(-3px) rotate(-6deg)}
 .btn{transition:transform .2s ease, box-shadow .2s ease}
 .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(62,27,45,.6)}
 .chip:focus-visible,.btn:focus-visible,a:focus-visible{outline:3px solid #39501F;outline-offset:3px}
@@ -76,10 +78,11 @@ a{color:#3E1B2D}a:hover{color:#39501F}
 .heroCols{height:420px !important}
 .colB{display:none !important}
 .navLinks{display:none !important}
+.soc{width:38px !important;height:38px !important}
 .menuGrid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:12px !important}
 .menuGrid h3{font-size:19px !important}
-.floatBar{left:12px !important;right:12px !important;width:auto !important;margin-left:0 !important;bottom:12px !important}
-.floatText{font-size:17px !important}
+.floatBar{bottom:14px !important}
+.floatText{font-size:25px !important}
 }
 @media (prefers-reduced-motion: reduce){.twirl,.wobble,.colUp,.colDown,.mq,.reveal,.floatBar,.dot{animation:none}}
 
@@ -132,13 +135,20 @@ html.a11y-cursor,html.a11y-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns=
 <header style="position: sticky; top: 0; z-index: 30; background: rgba(255,247,244,0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(62,27,45,0.08)">
 <div style="max-width: 1320px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px">
 <a href="#top" aria-label="BLEND — לראש העמוד" style="display: flex; align-items: center"><img src="assets/brand/logo-white.svg" alt="BLEND your mind" style="height: 58px; width: auto; display: block"></a>
-<nav class="navLinks" aria-label="ניווט ראשי" style="display: flex; gap: 30px; font-weight: 700; font-size: 20px">
+<nav class="navLinks" aria-label="ניווט ראשי" style="display: flex; gap: 34px; font-weight: 700; font-size: 26px">
 <a href="#best" style="text-decoration: none">הכי אהובים</a>
 <a href="#menu" style="text-decoration: none">תפריט</a>
 <a href="#mood" style="text-decoration: none">מה הבלנד שלך?</a>
 <a href="#visit" style="text-decoration: none">מצאו אותנו</a>
 </nav>
-<a class="btn" href="https://iron-order-web.onrender.com/r/blend-c0f9" style="background: #3E1B2D; color: #F0B8C0; text-decoration: none; font-weight: 700; font-size: 19px; padding: 11px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px">הזמנה אונליין</a>
+<div style="display: flex; align-items: center; gap: 16px">
+<ul aria-label="BLEND ברשתות החברתיות" style="list-style: none; margin: 0; padding: 0; display: flex; gap: 8px">
+<li><a class="soc" href="#" aria-label="BLEND בפייסבוק" style="width: 44px; height: 44px; border-radius: 50%; background: #3E1B2D; color: #F0B8C0; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.5-1.3 1.4-1.3H17V2.2C16.4 2.1 15.3 2 14.2 2 11.6 2 10 3.6 10 6.4v2.1H7v3.7h3V22h4v-9.8h3l.5-3.7z"></path></svg></a></li>
+<li><a class="soc" href="#" aria-label="BLEND באינסטגרם" style="width: 44px; height: 44px; border-radius: 50%; background: #F0B8C0; color: #3E1B2D; display: flex; align-items: center; justify-content: center"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg></a></li>
+<li><a class="soc" href="#" aria-label="BLEND בטיקטוק" style="width: 44px; height: 44px; border-radius: 50%; background: #B0D08A; color: #39501F; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-3.4v13.3a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9a6.4 6.4 0 1 0 5.4 6.3V8.6a8 8 0 0 0 4.6 1.5V6.7c-2.4 0-4.4-2-4.6-4.7z"></path></svg></a></li>
+</ul>
+<a class="btn" href="https://iron-order-web.onrender.com/r/blend-c0f9" style="background: #3E1B2D; color: #F0B8C0; text-decoration: none; font-weight: 900; font-size: 24px; padding: 8px 22px; border-radius: 999px; min-height: 46px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px">הזמנה אונליין</a>
+</div>
 </div>
 </header>
 <main id="main" tabindex="-1">
@@ -269,7 +279,7 @@ html.a11y-cursor,html.a11y-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns=
 <div style="display: flex; gap: 18px; flex-wrap: wrap">
 <a href="https://iron-order-web.onrender.com/r/blend-c0f9" style="color: #B0D08A">הזמנה אונליין</a>
 <a href="#menu" style="color: #B0D08A">תפריט</a>
-<a href="#visit" style="color: #B0D08A">[אינסטגרם]</a>
+<a href="#" class="instaLink" style="color: #B0D08A">אינסטגרם</a>
 <button type="button" class="linkBtn" data-a11y-open-statement style="color: #B0D08A">הצהרת נגישות</button>
 </div>
 </div>
@@ -278,14 +288,14 @@ html.a11y-cursor,html.a11y-cursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns=
 </footer>
 
 <!-- ================= Floating quick-order bar ================= -->
-<aside class="floatBar" aria-label="הזמנה מהירה" style="position: fixed; bottom: 22px; left: 50%; margin-left: -260px; width: 520px; max-width: calc(100% - 24px); box-sizing: border-box; z-index: 50; background: #3E1B2D; color: #FFF7F4; border-radius: 999px; padding: 8px 8px 8px 8px; display: flex; align-items: center; justify-content: space-between; gap: 10px; box-shadow: 0 18px 40px -12px rgba(62,27,45,.6)">
-<div style="display: flex; align-items: center; gap: 12px; padding-right: 10px; min-width: 0">
-<div style="perspective: 300px; flex: 0 0 auto"><img class="twirl" src="assets/brand/tornado-pink.svg" alt="" aria-hidden="true" style="width: 20px; height: auto; display: block"></div>
+<aside class="floatBar" aria-label="הזמנה מהירה" style="position: fixed; bottom: 20px; left: 0; right: 0; margin: 0 auto; width: max-content; max-width: calc(100% - 24px); box-sizing: border-box; z-index: 50; background: #3E1B2D; color: #FFF7F4; border-radius: 999px; padding: 6px; display: flex; align-items: center; justify-content: space-between; gap: 14px; box-shadow: 0 18px 40px -12px rgba(62,27,45,.6)">
+<div style="display: flex; align-items: center; gap: 8px; padding-right: 12px; min-width: 0">
+<div style="perspective: 300px; flex: 0 0 auto"><img class="twirl" src="assets/brand/tornado-pink.svg" alt="" aria-hidden="true" style="width: 24px; height: auto; display: block"></div>
 <div style="display: flex; flex-direction: column; min-width: 0">
-<span class="floatText" style="font-weight: 800; font-size: 20px; white-space: nowrap">הזמנה מהירה</span>
+<span class="floatText" style="font-weight: 900; font-size: 27px; line-height: 1; white-space: nowrap">הזמנה מהירה</span>
 </div>
 </div>
-<a class="btn" href="https://iron-order-web.onrender.com/r/blend-c0f9" style="flex: 0 0 auto; background: #B0D08A; color: #3E1B2D; text-decoration: none; font-weight: 800; font-size: 20px; padding: 12px 22px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px">
+<a class="btn" href="https://iron-order-web.onrender.com/r/blend-c0f9" style="flex: 0 0 auto; background: #B0D08A; color: #3E1B2D; text-decoration: none; font-weight: 900; font-size: 24px; padding: 8px 20px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 6px">
 להזמנה
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
 </a>
